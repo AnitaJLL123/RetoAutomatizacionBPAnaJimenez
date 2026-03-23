@@ -1,0 +1,51 @@
+CONCLUSIONES DEL EJERCICIO – AUTOMATIZACION API PETSTORE
+
+Durante el desarrollo del ejercicio de automatización sobre la API pública PetStore se implementaron y
+ejecutaron satisfactoriamente los cuatro casos requeridos:
+
+1. Adicionar una mascota
+2. Consultar la mascota adicionada por ID
+3. Modificar el nombre de la mascota y su estatus
+4. Consultar la mascota modificada por estatus
+
+HALLAZGOS PRINCIPALES
+
+- Se confirmó el correcto funcionamiento de los endpoints POST /pet, GET /pet/{petId}, PUT /pet y
+GET /pet/findByStatus.
+- Se utilizó Karate como herramienta de automatización para pruebas REST, permitiendo manejar de forma clara
+headers, body, variables, lectura de archivos externos y validaciones.
+- Se trabajó con datos externos en archivos JSON y CSV, lo que facilitó la parametrización de las pruebas.
+- Durante la ejecución se identificó que la API PetStore es pública y compartida, por lo que algunos datos
+pueden verse afectados por ejecuciones externas o por actualizaciones previas sobre el mismo identificador.
+- En la consulta por estatus se observó que el endpoint devuelve una lista de mascotas según el estado
+solicitado, por lo que la validación principal se enfocó en comprobar que la respuesta fuera una colección
+y que todos los elementos retornados correspondieran al estatus esperado.
+- Como validación adicional en el caso 4, se intentó identificar la mascota por nombre modificado dentro de
+la lista de respuesta, evitando que la prueba fallara si el registro no aparecía de forma inmediata en la
+búsqueda pública.
+
+DECISIONES DE IMPLEMENTACION
+
+- Se definieron headers comunes para todas las pruebas, principalmente Accept y Content-Type en formato
+application/json.
+- Se utilizó un archivo base Pet.json para construir el cuerpo de las peticiones.
+- Se parametrizaron los valores de entrada desde el archivo DatosMascota.csv.
+- En el caso 2 se reutilizó el escenario de creación para consultar posteriormente la mascota registrada.
+- En el caso 4 se realizó la búsqueda por estatus usando el endpoint /pet/findByStatus, validando que la
+respuesta fuera exitosa y que los elementos retornados tuvieran el estatus solicitado.
+
+RESULTADO FINAL
+
+Se obtuvo una ejecución exitosa de los cuatro casos solicitados en el ejercicio:
+- Adición de mascota
+- Consulta por ID
+- Modificación de nombre y estatus
+- Consulta por estatus
+
+CONCLUSION GENERAL
+
+El ejercicio permitió validar de forma satisfactoria el flujo principal de gestión de mascotas en la API
+PetStore. Asimismo, permitió evidenciar la importancia de definir correctamente los datos de prueba,
+reutilizar escenarios cuando es necesario y adaptar las validaciones al comportamiento real de una API
+pública. La solución final quedó alineada con los requerimientos planteados y con evidencia suficiente
+para su revisión y reproducción.
