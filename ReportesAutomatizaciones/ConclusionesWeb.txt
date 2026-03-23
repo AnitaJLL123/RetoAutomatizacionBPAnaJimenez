@@ -1,0 +1,42 @@
+CONCLUSIONES - AUTOMATIZACIÓN SAUCEDEMO
+
+1. Se implementó correctamente un flujo end-to-end (E2E) utilizando Serenity BDD con el patrón Screenplay,
+validando el proceso completo de compra en la aplicación SauceDemo.
+
+2. El escenario cubre las etapas principales:
+   - Inicio de sesión
+   - Selección de productos
+   - Visualización del carrito
+   - Registro de información de compra
+   - Finalización de la compra
+
+3. Se logró la parametrización de datos mediante Scenario Outline, permitiendo reutilizar el mismo flujo con diferentes valores de entrada
+como usuario, productos y datos personales.
+
+4. Se validó exitosamente el mensaje de confirmación de compra:
+   "Thank you for your order!"
+   asegurando que la aplicación responde correctamente al finalizar el proceso.
+
+5. Se evidenció la importancia de:
+   - Usar localizadores robustos (XPath/CSS)
+   - Manejar correctamente los tiempos de espera (timeouts)
+   - Validar la navegación entre páginas antes de interactuar con elementos
+
+6. Se identificaron errores comunes durante la implementación:
+   - Uso incorrecto de métodos como isDisplayed() con parámetros
+   - Variables no definidas en el contexto del Task
+   - Duplicación de actor.attemptsTo()
+   - Diferencias entre el texto esperado y el real (case sensitive)
+
+7. Se aplicaron buenas prácticas del patrón Screenplay:
+   - Separación de responsabilidades (Tasks, Glue, UI)
+   - Reutilización de componentes
+   - Código más legible y mantenible
+
+8. El reporte generado por Serenity muestra ejecución exitosa (SUCCESS), evidenciando que el flujo automatizado funciona correctamente.
+
+9. La automatización permite validar de forma rápida y confiable funcionalidades críticas del sistema, facilitando pruebas regresivas.
+
+CONCLUSIÓN GENERAL:
+La automatización del flujo de compra en SauceDemo fue exitosa, cumpliendo con los objetivos del ejercicio y demostrando el uso adecuado
+de Serenity BDD, Cucumber y Screenplay para pruebas funcionales automatizadas.

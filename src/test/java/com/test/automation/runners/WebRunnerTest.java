@@ -23,8 +23,7 @@ import static com.test.automation.util.constants.Constants.EXT_FEATURE;
         glue = {"com.test.automation.hooks", "com.test.automation.glue"},
         plugin = {"json:build/cucumber-reports/json/cucumber.json", "summary"},
         snippets = CucumberOptions.SnippetType.CAMELCASE,
-        //tags = "@demoblaze"  //Pruebas E2E Web
-        tags = "@mobileTheApp" //Activar para ejecutar pruebas mobiles y Comentar @tags = "@demoblaze"
+        tags = "@Saucedemo"  //Pruebas E2E Web
 )
 
 public class WebRunnerTest {
